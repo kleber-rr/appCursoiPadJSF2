@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile" contentType="text/html"
+	renderKitId="PRIMEFACES_MOBILE">
+
+	<pm:page title="Notes">
+
+		<!-- Main View -->
+		<pm:view id="main" swatch="e">
+			<pm:header title="SECRETARIA MUNICIPAL DE SAUDE/PMBV">
+
+			</pm:header>
+
+			<pm:content>
+				<h:form id="listNotesForm">
+
+					<p>Selecione abaixo.</p>
+					<p:dataList value="#{rodServicosBean.lista}" var="servicos">
+						<f:facet name="header">
+					        Lista de Serviços
+    					</f:facet>
+						<h:outputLink value="teste">
+							<h:outputText value="#{servicos.descricao}" />
+							<h2>#{servicos.livre}</h2>
+						</h:outputLink>
+					</p:dataList>
+
+
+
+				</h:form>
+			</pm:content>
+
+		</pm:view>
+	</pm:page>
+</f:view>

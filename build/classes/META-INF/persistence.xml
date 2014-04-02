@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="Rodio_JSF2" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>br.gov.rr.smsa.rodio.entidades.RodServicos</class>
+		<class>br.gov.rr.smsa.rodio.entidades.RodCadastroSus</class>
+		<class>br.gov.rr.smsa.rodio.entidades.RodMunicipio</class>
+		<class>br.gov.rr.smsa.rodio.entidades.RodPessoas</class>
+		<class>br.gov.rr.smsa.rodio.entidades.RodUbs</class>
+		<class>br.gov.rr.smsa.rodio.entidades.RodUf</class>
+		<class>br.gov.rr.smsa.rodio.entidades.MakerUsuario</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/rodio_" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="Maker@1" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+
+			<property name="hibernate.c3p0.min_size" value="2" />
+			<property name="hibernate.c3p0.max_size" value="100" />
+			<property name="hibernate.c3p0.timeout" value="5000" />
+			<property name="hibernate.c3p0.max_statements" value="30" />
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+		</properties>
+	</persistence-unit>
+</persistence>
