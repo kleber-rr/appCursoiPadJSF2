@@ -52,6 +52,9 @@ public class RodServicos implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "srv_st_exibir")
 	private boolean stExibir;
+	
+//	@SuppressWarnings("unused")
+//	private String livreOcupado;
 
 	public Integer getId() {
 		return id;
@@ -196,4 +199,18 @@ public class RodServicos implements Serializable {
 				+ ", stExibir=" + stExibir + "]";
 	}
 
+
+//	public String getLivreOcupado() {
+//		if(livre == true){
+//			return "Livre";
+//		} else {
+//			return "Lotado";
+//		}
+//
+//	}
+//
+//	public void setLivreOcupado(String livreOcupado) {
+//		this.livreOcupado = livreOcupado;
+//	}
+//	
 }

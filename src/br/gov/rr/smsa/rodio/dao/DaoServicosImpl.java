@@ -11,6 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 import br.gov.rr.smsa.rodio.entidades.RodServicos;
 
@@ -43,5 +44,15 @@ public class DaoServicosImpl extends DaoGenericImpl<RodServicos, Serializable> {
 		c.addOrder(Order.asc("descricao"));
 		result = c.list();
 		return result;
+	}
+	
+	public RodServicos buscaPorId(Integer id){
+		
+		Criteria c = criaCriteria();
+		RodServicos serv;
+		c.add(Restrictions.eq("id", id));
+		serv = (RodServicos) c.uniqueResult();
+		return serv;
+		
 	}
 }

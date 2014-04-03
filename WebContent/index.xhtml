@@ -8,10 +8,11 @@
 	xmlns:pm="http://primefaces.org/mobile" contentType="text/html"
 	renderKitId="PRIMEFACES_MOBILE">
 
-	<pm:page title="Notes">
+
+	<pm:page title="Notes" id="first">
 
 		<!-- Main View -->
-		<pm:view id="main" swatch="e">
+		<pm:view id="main" swatch="c">
 			<pm:header title="SECRETARIA MUNICIPAL DE SAUDE/PMBV">
 
 			</pm:header>
@@ -20,14 +21,16 @@
 				<h:form id="listNotesForm">
 
 					<p>Selecione abaixo.</p>
-					<p:dataList value="#{rodServicosBean.lista}" var="servicos">
+					<p:dataList value="#{rodServicosBean.lista}" var="servicos"
+						type="inset">
 						<f:facet name="header">
 					        Lista de Serviços
     					</f:facet>
-						<h:outputLink value="teste">
-							<h:outputText value="#{servicos.descricao}" />
-							<h2>#{servicos.livre}</h2>
-						</h:outputLink>
+						
+						<p:commandButton actionListener="#{rodServicosBean.abreSistema}" action="#{rodServicosBean.vaiParaSistema}"
+							id="abreServicos" value="#{servicos.descricao}">
+							<f:param id="idServico" name="Id" value="#{servicos.id}" />
+						</p:commandButton>
 					</p:dataList>
 
 
@@ -35,6 +38,32 @@
 				</h:form>
 			</pm:content>
 
+		</pm:view>
+
+		<pm:view id="viewB" swatch="c">
+			<pm:header title="Page 2"></pm:header>
+
+			<pm:content>
+				<h:form id="servico">
+
+
+					<p:panel header="RODIO">
+
+						<p:panelGrid columns="2">
+							<h:outputLabel value="Descriçao: " for="campo_descricao" />
+							<h:inputText value="#{rodUFBean.descricao}" id="campo_descricao"
+								style="width: 200px;" />
+
+							<h:outputLabel value="Sigla: " for="campo_sigla" />
+							<h:inputText value="#{rodUFBean.sigla}" id="campo_sigla"
+								style="width: 200px;" />
+						</p:panelGrid>
+
+					</p:panel>
+
+				</h:form>
+
+			</pm:content>
 		</pm:view>
 	</pm:page>
 </f:view>
