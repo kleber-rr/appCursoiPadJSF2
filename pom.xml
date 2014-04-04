@@ -22,7 +22,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.4.Final</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>

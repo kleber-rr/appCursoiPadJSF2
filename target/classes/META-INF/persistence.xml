@@ -4,15 +4,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="Rodio_JSF2" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>br.gov.rr.smsa.rodio.entidades.RodServicos</class>
-		<class>br.gov.rr.smsa.rodio.entidades.RodCadastroSus</class>
-		<class>br.gov.rr.smsa.rodio.entidades.RodMunicipio</class>
-		<class>br.gov.rr.smsa.rodio.entidades.RodPessoas</class>
-		<class>br.gov.rr.smsa.rodio.entidades.RodUbs</class>
-		<class>br.gov.rr.smsa.rodio.entidades.RodUf</class>
-		<class>br.gov.rr.smsa.rodio.entidades.MakerUsuario</class>
+		<class>br.gov.rr.smsa.rodio.entidades.Pessoa</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/rodio_" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/curso" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="Maker@1" />
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

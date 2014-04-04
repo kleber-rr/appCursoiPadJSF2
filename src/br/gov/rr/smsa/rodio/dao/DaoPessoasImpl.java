@@ -13,45 +13,45 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-import br.gov.rr.smsa.rodio.entidades.RodServicos;
+import br.gov.rr.smsa.rodio.entidades.Pessoa;
 
-public class DaoServicosImpl extends DaoGenericImpl<RodServicos, Serializable> {
+public class DaoPessoasImpl extends DaoGenericImpl<Pessoa, Serializable> {
 
 	@SuppressWarnings("unchecked")
-	public List<RodServicos> lista() {
+	public List<Pessoa> lista() {
 
 		CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
-		CriteriaQuery<RodServicos> cq = builder.createQuery(RodServicos.class);
-		cq.from(RodServicos.class);
+		CriteriaQuery<Pessoa> cq = builder.createQuery(Pessoa.class);
+		cq.from(Pessoa.class);
 		Query query = getEntityManager().createQuery(cq);
-		List<RodServicos> result = query.getResultList();
+		List<Pessoa> result = query.getResultList();
 
-		Collections.sort(result, new Comparator<RodServicos>() {
+		Collections.sort(result, new Comparator<Pessoa>() {
 
 			@Override
-			public int compare(RodServicos arg0, RodServicos arg1) {
-				return arg0.getDescricao().compareTo(arg1.getDescricao());
+			public int compare(Pessoa arg0, Pessoa arg1) {
+				return arg0.getNome().compareTo(arg1.getNome());
 			}
 		});
 		return result;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<RodServicos> listaSimples() {
+	public List<Pessoa> listaSimples() {
 
-		List<RodServicos> result;
+		List<Pessoa> result;
 		Criteria c = criaCriteria();
-		c.addOrder(Order.asc("descricao"));
+		c.addOrder(Order.asc("nome"));
 		result = c.list();
 		return result;
 	}
 	
-	public RodServicos buscaPorId(Integer id){
+	public Pessoa buscaPorId(Integer id){
 		
 		Criteria c = criaCriteria();
-		RodServicos serv;
+		Pessoa serv;
 		c.add(Restrictions.eq("id", id));
-		serv = (RodServicos) c.uniqueResult();
+		serv = (Pessoa) c.uniqueResult();
 		return serv;
 		
 	}
